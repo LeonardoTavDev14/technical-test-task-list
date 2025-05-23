@@ -52,7 +52,7 @@ const Formulario = ({ type }) => {
 
     if (type === "login") {
       try {
-        const response = await axios.post("http://localhost:3000/login", {
+        const response = await axios.post(`${import.meta.env.VITE_URLLOGIN}`, {
           email,
           password,
         });
@@ -70,10 +70,13 @@ const Formulario = ({ type }) => {
       }
     } else if (type === "register") {
       try {
-        const response = await axios.post("http://localhost:3000/register", {
-          email,
-          password,
-        });
+        const response = await axios.post(
+          `${import.meta.env.VITE_URLREGISTER}`,
+          {
+            email,
+            password,
+          }
+        );
         setPopupMessage(response.data.message);
         setPopupIsVisible(true);
         setEmail("");

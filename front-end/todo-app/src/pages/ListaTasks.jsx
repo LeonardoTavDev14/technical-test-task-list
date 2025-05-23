@@ -17,16 +17,19 @@ const ListaTasks = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/tasks", {
+      .get(`${import.meta.env.VITE_URLLIST}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setTasks(response.data));
   }, [tasks]);
 
   const handleDeleteTask = async (id) => {
-    const response = await axios.delete(`http://localhost:3000/tasks/${id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await axios.delete(
+      `${import.meta.env.VITE_URLDELETE}/${id}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     setPopupMessage(response.data.message);
     setPopupIsVisible(true);
     setTasks(tasks.filter((t) => t.id !== id));
@@ -34,7 +37,7 @@ const ListaTasks = () => {
 
   const handleUpdateTask = async (updatedTask) => {
     const response = await axios.put(
-      `http://localhost:3000/tasks/${updatedTask.id}`,
+      `${import.meta.env.VITE_URLUPDATE}/${updatedTask.id}`,
       updatedTask,
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -46,9 +49,13 @@ const ListaTasks = () => {
   };
 
   const handleAddTask = async (newTask) => {
-    const response = await axios.post("http://localhost:3000/tasks", newTask, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await axios.post(
+      `${import.meta.env.VITE_URLCREATE}`,
+      newTask,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     setTasks([...tasks, response.data]);
     setPopupMessage(response.data.message);
     setPopupIsVisible(true);
@@ -57,7 +64,7 @@ const ListaTasks = () => {
   const logout = () => {
     localStorage.removeItem("token");
     setTimeout(() => {
-      navigate("/login");
+      navigate("/");
     }, 1000);
   };
 
