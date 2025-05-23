@@ -1,0 +1,120 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-image: url("../assets/Tarefas-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.containerForm {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.formGroupContainer {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+
+  button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #0866ff;
+    color: #fff;
+    margin-top: 10px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #1877f2;
+    }
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  gap: 2px;
+
+  label {
+    font-size: 15px;
+  }
+
+  input {
+    width: 350px;
+    padding: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    font-family: inherit;
+
+    &::placeholder {
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.passwordContainer {
+  position: relative;
+}
+
+.passwordSpan {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.link {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: underline;
+  font-weight: 500;
+  color: #007bff;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}

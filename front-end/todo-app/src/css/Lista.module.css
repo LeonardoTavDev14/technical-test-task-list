@@ -1,0 +1,53 @@
+.logout {
+  margin: 20px;
+  align-self: center;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ff0000;
+
+  &:hover {
+    cursor: pointer;
+    transition: all 500ms;
+    opacity: 0.8;
+  }
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+
+  .containerTarefas {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 10px;
+
+    button {
+      align-self: center;
+      padding: 6px 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 500;
+      font-family: inherit;
+      background-color: #086fff;
+
+      &:hover {
+        cursor: pointer;
+        transition: all 500ms;
+        opacity: 0.9;
+      }
+    }
+  }
+}
