@@ -1,7 +1,7 @@
 import { Router } from "express";
 import UsersControllers from "./controllers/UsersControllers.js";
 import TasksControllers from "./controllers/TasksControllers.js";
-import { verifyToken } from "./Middlewares/verifyToken.js";
+import { verifyToken } from "./middlewares/verifyToken.js";
 
 const routes = Router();
 
