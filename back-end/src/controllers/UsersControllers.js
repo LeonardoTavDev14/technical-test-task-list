@@ -27,7 +27,7 @@ class UsersControllers {
       });
 
       return response.status(201).json({
-        message: "Usuário criado com sucesso!",
+        message: "Sua conta foi criada com sucesso!",
       });
     } catch (err) {
       console.error("Erro ao cadastrar usuário ", err.message);
